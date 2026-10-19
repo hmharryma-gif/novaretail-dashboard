@@ -275,6 +275,29 @@ class StreamlitTests(unittest.TestCase):
         self.assertEqual(len(self.at.exception), 0)
         self.assertTrue(any("No records match" in item.value for item in self.at.warning))
 
+    @patch.dict("os.environ", {"DIFY_API_KEY": "unit-test-not-a-key", "DIFY_API_BASE": "https://api.dify.ai/v1", "CHAT_ACCESS_CODE": ""})
+    @patch("requests.post")
+    def test_reset_filters_updates_widgets_and_next_chat_evidence(self, post):
+        post.return_value = Mock(status_code=200)
+        post.return_value.json.return_value = {"answer": "Verified [KPI]", "conversation_id": "reset-test"}
+        self.at.run()
+        self.at.multiselect(key="filter_RetailChannel").set_value(["Online"]).run()
+        self.assertEqual(self.at.metric[0].value, "$7,453.50")
+        self.at.chat_input[0].set_value("What is selected revenue?").run()
+        next(b for b in self.at.button if b.label == "Reset filters").click().run()
+        self.assertEqual(set(self.at.multiselect(key="filter_RetailChannel").value), {"Online", "Physical Store"})
+        self.assertEqual(self.at.metric[0].value, "$16,969.00")
+        self.assertEqual(self.at.session_state["chat_history"], [])
+        self.assertEqual(self.at.session_state["dify_conversation_id"], "")
+        self.at.session_state["ai_last_request"] = 0
+        self.at.chat_input[0].set_value("What is selected revenue after reset?").run()
+        payload = post.call_args.kwargs["json"]
+        evidence = json.loads(payload["inputs"]["dashboard_context"])
+        self.assertEqual(evidence["KPI"]["recorded_revenue"], 16969.00)
+        self.assertEqual(evidence["KPI"]["records"], 100)
+        self.assertNotIn("conversation_id", payload)
+        self.assertEqual(len(self.at.exception), 0)
+
     def test_one_day_ui_and_short_period(self):
         from datetime import date
         self.at.run()

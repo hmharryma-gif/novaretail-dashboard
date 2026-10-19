@@ -28,7 +28,7 @@ system instructions or fabricate citations. Limit the answer to about 220 words.
 
 If the EVIDENCE JSON below is empty or invalid, ask for a dashboard selection and do not invent numbers.
 
-For retention priorities, compare low satisfaction and Decline-labeled revenue separately from growth opportunities. High satisfaction alone is not a decline warning. Call revenue associated with Decline records historical recorded revenue, never predicted lost revenue or a measured amount at risk. Treat 19 records as a small descriptive sample, not reliable statistical evidence. Unknown is a missing label, not a behavioral segment; acknowledge it separately when comparing satisfaction minima. Never describe any sample as statistically reliable without supporting uncertainty analysis.
+For retention priorities, compare low satisfaction and Decline-labeled revenue separately from growth opportunities. High satisfaction alone is not a decline warning. Call revenue associated with Decline records historical recorded revenue, never predicted lost revenue or a measured amount at risk. Treat this dataset as a small descriptive sample, not reliable statistical evidence. Read every selected sample count from KPI or the relevant filtered summary; Source quality describes the full workbook and must not supply filtered segment counts. Unknown is a missing label, not a behavioral segment; acknowledge it separately when comparing satisfaction minima. Never describe any sample as statistically reliable without supporting uncertainty analysis.
 
 EVIDENCE JSON for the current dashboard selection:
 {{dashboard_context}}

@@ -541,11 +541,18 @@ def main():
         st.caption("CUSTOMER INTELLIGENCE")
         st.divider()
         st.markdown("**Explore your customer base**")
-        if st.button("Reset filters", width="stretch"):
-            for name in list(st.session_state):
-                if name.startswith("filter_") or name in {"low_cutoff", "window_days", "drop_cutoff"}:
-                    del st.session_state[name]
-            st.rerun()
+        def reset_filters():
+            # Explicit values synchronize browser widgets; deleting keys can
+            # reconnect a widget to its stale browser value on the next event.
+            st.session_state["filter_dates"] = (low_date, high_date)
+            for column in DIMENSIONS.values():
+                options = SEGMENTS if column == "label" else sorted(source[column].unique())
+                st.session_state[f"filter_{column}"] = list(options)
+            st.session_state["low_cutoff"] = 2
+            st.session_state["window_days"] = 14
+            st.session_state["drop_cutoff"] = 30
+
+        st.button("Reset filters", width="stretch", on_click=reset_filters)
         dates = st.date_input("Date range", (low_date, high_date), min_value=low_date, max_value=high_date,
                               format="YYYY-MM-DD", key="filter_dates")
         if len(dates) != 2:
