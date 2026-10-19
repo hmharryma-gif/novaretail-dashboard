@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="960" viewBox="0 0 1400 960" role="img" aria-labelledby="title desc">
+<title id="title">NovaRetail dashboard layout sketch</title>
+<desc id="desc">Persistent sidebar filters, five KPI cards and five analysis tabs. The overview prioritizes segment revenue, daily amounts, decision notes and top customers.</desc>
+<defs><style>text{font-family:Arial,sans-serif;fill:#142C3B}.muted{fill:#526773}.small{font-size:14px}.label{font-size:16px}.heading{font-size:21px;font-weight:700}.metric{font-size:27px;font-weight:700}.teal{fill:#087F75}</style></defs>
+<rect width="1400" height="960" fill="#FBFAF7"/>
+<rect width="248" height="960" fill="#F1F0EA"/>
+<line x1="248" x2="248" y1="0" y2="960" stroke="#D6DBD6"/>
+<text x="26" y="48" font-size="24" font-weight="700">NOVARETAIL</text>
+<text x="26" y="74" class="small teal">CUSTOMER INTELLIGENCE</text>
+<text x="26" y="126" class="label" font-weight="700">Explore your customer base</text>
+<rect x="26" y="145" width="194" height="38" rx="7" fill="white" stroke="#CDD4CE"/>
+<text x="77" y="170" class="small">Reset filters</text>
+<text x="26" y="222" class="label">Date range</text>
+<rect x="26" y="236" width="194" height="48" rx="7" fill="white" stroke="#CDD4CE"/>
+<text x="38" y="256" class="small">Jan 15, 2023</text><text x="38" y="275" class="small">to Feb 20, 2023</text>
+<text x="26" y="323" class="label">Segment</text><rect x="26" y="337" width="194" height="42" rx="7" fill="white" stroke="#CDD4CE"/><text x="38" y="363" class="small">All 5 labels selected</text>
+<text x="26" y="418" class="label">Region</text><rect x="26" y="432" width="194" height="42" rx="7" fill="white" stroke="#CDD4CE"/><text x="38" y="458" class="small">All 4 regions selected</text>
+<text x="26" y="513" class="label">Channel</text><rect x="26" y="527" width="194" height="42" rx="7" fill="white" stroke="#CDD4CE"/><text x="38" y="553" class="small">Both channels selected</text>
+<rect x="26" y="598" width="194" height="48" rx="7" fill="none" stroke="#CDD4CE"/><text x="38" y="626" class="small">Product categories</text>
+<text x="26" y="670" class="small muted">35 of 35 categories selected</text>
+<rect x="26" y="698" width="194" height="48" rx="7" fill="none" stroke="#CDD4CE"/><text x="38" y="726" class="small">Retention review settings</text>
+<text x="26" y="789" class="small muted">Filters intersect across all</text><text x="26" y="811" class="small muted">charts, tables, exports</text><text x="26" y="833" class="small muted">and AI evidence.</text>
+<text x="280" y="40" class="small teal" letter-spacing="2" font-weight="700">NOVARETAIL / CUSTOMER INTELLIGENCE</text>
+<text x="280" y="87" font-size="35" font-weight="700">Customer insights. Clearer decisions.</text>
+<text x="280" y="119" class="label muted">Explore revenue, growth opportunities and signals for customer retention.</text>
+<text x="280" y="151" class="small muted">JAN 15 – FEB 20, 2023    100 OF 100 SOURCE RECORDS    USD</text>
+<rect x="280" y="173" width="1088" height="55" rx="8" fill="#EAF1F5"/>
+<text x="298" y="197" class="small">Data note: 100 records and 34 observed customer IDs. IDs and customer attributes conflict.</text>
+<text x="298" y="217" class="small">Recorded revenue is the sum of source amounts. Verify identity before customer outreach.</text>
+<g fill="white" stroke="#DCE1DB"><rect x="280" y="248" width="208" height="94" rx="10"/><rect x="500" y="248" width="208" height="94" rx="10"/><rect x="720" y="248" width="208" height="94" rx="10"/><rect x="940" y="248" width="208" height="94" rx="10"/><rect x="1160" y="248" width="208" height="94" rx="10"/></g>
+<text x="296" y="276" class="small muted">Recorded revenue</text><text x="296" y="319" class="metric">$16,969.00</text>
+<text x="516" y="276" class="small muted">Observed customer IDs</text><text x="516" y="319" class="metric">34</text>
+<text x="736" y="276" class="small muted">Purchase records</text><text x="736" y="319" class="metric">100</text>
+<text x="956" y="276" class="small muted">Average record amount</text><text x="956" y="319" class="metric">$169.69</text>
+<text x="1176" y="276" class="small muted">Mean satisfaction</text><text x="1176" y="319" class="metric">3.71 / 5</text>
+<text x="280" y="383" class="label teal" font-weight="700">Overview</text><text x="400" y="383" class="label">Growth opportunities</text><text x="601" y="383" class="label">Retention review</text><text x="776" y="383" class="label">Data &amp; methods</text><text x="944" y="383" class="label">AI assistant</text>
+<line x1="280" x2="1368" y1="399" y2="399" stroke="#DCE1DB"/><line x1="280" x2="360" y1="399" y2="399" stroke="#087F75" stroke-width="3"/>
+<text x="280" y="437" class="heading">Revenue by segment</text>
+<text x="280" y="480" class="small">Growth</text><rect x="380" y="462" width="254" height="25" rx="3" fill="#087F75"/><text x="644" y="480" class="small">$6,630</text>
+<text x="280" y="524" class="small">Promising</text><rect x="380" y="506" width="207" height="25" rx="3" fill="#3479B4"/><text x="597" y="524" class="small">$5,395</text>
+<text x="280" y="568" class="small">Decline</text><rect x="380" y="550" width="140" height="25" rx="3" fill="#BF4B45"/><text x="530" y="568" class="small">$3,650</text>
+<text x="280" y="612" class="small">Stable</text><rect x="380" y="594" width="40" height="25" rx="3" fill="#8C7C54"/><text x="430" y="612" class="small">$1,045</text>
+<text x="280" y="656" class="small">Unknown</text><rect x="380" y="638" width="10" height="25" rx="3" fill="#77838C"/><text x="400" y="656" class="small">$250</text>
+<text x="735" y="437" class="heading">Daily recorded revenue</text>
+<rect x="735" y="459" width="633" height="211" rx="9" fill="white" stroke="#DCE1DB" stroke-dasharray="6 5"/>
+<text x="765" y="508" class="label">Interactive date chart</text><text x="765" y="544" class="small muted">X: selected record dates</text><text x="765" y="574" class="small muted">Y: sum of recorded amounts in USD</text><text x="765" y="614" class="small muted">Short sampled history; no forecast or churn inference.</text>
+<text x="280" y="710" class="heading">Decisions to explore</text>
+<g fill="white" stroke="#DCE1DB"><rect x="280" y="727" width="350" height="92" rx="9"/><rect x="649" y="727" width="350" height="92" rx="9"/><rect x="1018" y="727" width="350" height="92" rx="9"/></g>
+<text x="296" y="755" class="label" font-weight="700">Develop existing demand</text><text x="296" y="782" class="small muted">Growth + Promising: 70.9% of revenue.</text><text x="296" y="804" class="small muted">Test a focused follow-up campaign.</text>
+<text x="665" y="755" class="label" font-weight="700">Prioritize service recovery</text><text x="665" y="782" class="small muted">Inspect low-rated and Decline records.</text><text x="665" y="804" class="small muted">Verify customer identity before outreach.</text>
+<text x="1034" y="755" class="label" font-weight="700">Test the leading category</text><text x="1034" y="782" class="small muted">Electronics: $7,089.84 from 16 records.</text><text x="1034" y="804" class="small muted">Measure incremental spend and margin.</text>
+<text x="280" y="862" class="heading">Highest recorded spend by customer ID</text><text x="280" y="891" class="small muted">Sortable table: ID, revenue, share, records, latest segment, satisfaction, review reasons.</text>
+<line x1="280" x2="1368" y1="914" y2="914" stroke="#DCE1DB"/>
+<text x="280" y="942" class="small muted">DESIGN SKETCH · Overview page · Other tabs retain the sidebar and KPI cards.</text>
+</svg>

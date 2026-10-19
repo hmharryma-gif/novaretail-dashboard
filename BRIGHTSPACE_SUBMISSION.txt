@@ -1,0 +1,30 @@
+Challenge 2: NovaRetail — Interactive Dashboarding for Decision Making
+
+PUBLIC STREAMLIT DASHBOARD URL
+[Paste the verified public Streamlit URL here after deployment.]
+
+THREE KEY INSIGHTS
+Scope: All supplied records, January 15-February 20, 2023, with all filters selected.
+
+1. Growth opportunity
+Growth and Promising records contribute $12,024.40, or 70.86% of recorded revenue. Electronics is the largest category at $7,089.84 across 16 records (41.78%). We recommend a focused follow-up campaign for suitable customers, testing incremental repeat spend against a holdout group. These amounts show where to test; they do not prove future growth or campaign effectiveness.
+
+2. Early warning signs for retention
+The 19 Decline-labeled records contribute $3,649.81 (21.51% of recorded revenue) and average 1.58/5 satisfaction. Seventeen of the 19 are rated 1 or 2. We recommend verifying the associated customer identities and investigating low-rated experiences before targeted service recovery. Track subsequent satisfaction and repeat recorded spend. These signals support a retention review, not a confirmed churn prediction.
+
+3. Commercial and marketing priority
+Physical stores generate $9,515.50 versus $7,453.50 online, each from 50 records, but average satisfaction is lower in stores: 3.54 versus 3.88. Stores also account for $2,619.89, or 71.78%, of Decline-labeled recorded revenue. We recommend a store service-recovery pilot, evaluated using satisfaction, repeat spend and margin when cost data becomes available. Product mix and customer differences may explain part of the channel gap.
+
+DATA NOTE
+The actual workbook has 100 records and 34 distinct CustomerID values, rather than 99 verified consumers. Transaction IDs are reused and customer attributes conflict. We retained all records and report summed PurchaseAmount as recorded revenue. The missing segment remains Unknown, preserving its $249.99. Segment analysis uses record labels and does not assume exclusive customer groups.
+
+CONTRIBUTION DECLARATION
+Provide the required, accurate contribution statement directly in the private submission form. Keep contributor names and other identifying details out of the public project files.
+
+REQUIRED FILES
+app.py
+requirements.txt
+NR_dataset.xlsx
+final_prompt.txt
+
+Before submitting, replace the URL placeholder, verify a live AI response and provide the contribution statement privately.
