@@ -4,7 +4,7 @@ Verified on October 19, 2026 with Python 3.12 and the direct dependency versions
 
 ## Automated checks
 
-**28 tests passed after the Dify integration update.** Run with:
+**29 tests passed after the Dify integration and filter-reset fixes.** Run with:
 
 ```bash
 python -m unittest discover -s tests -v
@@ -28,7 +28,7 @@ Coverage includes:
 
 ## Running application and visual checks
 
-The following browser checks were completed on the previous interface. The Dify update changes chatbot configuration text and transport, and was subsequently checked with Streamlit AppTest as described above. The unchanged chart layout was not retested in a browser.
+The following browser checks were completed on the previous interface. The Dify update changes chatbot configuration text and transport, and was subsequently checked with Streamlit AppTest as described above. The deployed chart and filter interface was subsequently checked as described in the live deployment section.
 
 - Started the actual Streamlit server and received HTTP 200 from its health endpoint.
 - Used a headless Chromium browser to open the running app and navigate all five tabs.
@@ -62,19 +62,35 @@ SHA-256:
 - Compiled caches, repository history, test screenshots, local logs and real credential files are excluded from the submission archive.
 - Business-case role names and supplied customer/transaction identifiers remain part of the assignment data.
 
-## Remaining external checks
+## Earlier Dify UI checks
 
 **Live Dify UI tests completed on October 19, 2026.** NovaRetail Assistant was initially created and published using gpt-4.1-mini-2025-04-14 and the required `dashboard_context` Paragraph input (maximum 200000 characters). With the full preview JSON, the revised prompt correctly identified Growth revenue of $6,629.71 and Decline satisfaction of 1.58/5, with sample limitations. The initial responses overstated small-sample reliability and confused growth with retention priorities; the prompt was strengthened and retested.
 
-The published web app was tested with a Growth-only KPI/segment fixture. It returned $6,629.71 and 11 distinct customer IDs and correctly declined to compare Decline without changing the evidence scope. These are live UI tests, not a live Streamlit-to-Dify API test. No app API key has been created or stored. Streamlit Secrets configuration and end-to-end API testing remain pending.
+The published web app was tested with a Growth-only KPI/segment fixture. It returned $6,629.71 and 11 distinct customer IDs and correctly declined to compare Decline without changing the evidence scope. These are live UI tests, not a live Streamlit-to-Dify API test. These earlier tests preceded API-key configuration. The later deployment checks below supersede that status.
 
 Dify chatbot: https://udify.app/chat/DsPerLgOY8NgFXc1
 The standalone chatbot requires dashboard evidence input. This is not the required public Streamlit dashboard URL.
 
-**Public deployment is pending.** No public URL is claimed. The code, workflow and deployment instructions are ready for publication. Repository ownership and commit-author metadata are configured separately from this package.
+Public dashboard: https://novaretail-insights.streamlit.app/
+Repository ownership and commit-author metadata are configured separately from this package.
 
-Before submission, publish the repository and Streamlit app, verify public access in a private browser window, test a real AI answer against the dashboard, fill the URL placeholder, and provide the contribution statement directly in the private submission form.
+Before submission, provide the accurate contribution statement directly in the private submission form. Public sharing was enabled in Streamlit; a separate signed-out browser check was not performed in this session.
 
 ## Qwen model update
 
-On October 19, 2026, the published model was changed to `qwen3.7-plus` (Tongyi) at the project requester's direction. A live Dify preview using the full dashboard evidence correctly returned Growth revenue of $6,629.71 (39.07%), Decline historical revenue of $3,649.81 (21.51%), mean satisfaction of 1.58, and 17 of 18 low-satisfaction records belonging to Decline. The answer noted small-sample and conflicting-identity limitations. Dify confirmed the published configuration was up to date. The earlier Growth-only public-chat test used the previous model; a live Streamlit-to-Dify API test remains pending.
+On October 19, 2026, the published model was changed to `qwen3.7-plus` (Tongyi) at the project requester's direction. A live Dify preview using the full dashboard evidence correctly returned Growth revenue of $6,629.71 (39.07%), Decline historical revenue of $3,649.81 (21.51%), mean satisfaction of 1.58, and 17 of 18 low-satisfaction records belonging to Decline. The answer noted small-sample and conflicting-identity limitations. Dify confirmed the published configuration was up to date. The earlier Growth-only public-chat test used the previous model. The live Streamlit-to-Dify Qwen checks are documented below.
+
+
+## Live Streamlit deployment and integration
+
+Verified on October 19, 2026:
+
+- Deployed `main/app.py` on Streamlit Community Cloud with Python 3.12. Public sharing was enabled; source files remain in a private GitHub repository.
+- Stored the Dify application key only in Streamlit Secrets, with API base `https://api.dify.ai/v1`; no key was committed or included in the submission files.
+- The overview displayed $16,969.00, 100 source records and 34 observed customer IDs. Online-only filtering displayed $7,453.50 and 50 records.
+- A real question submitted through the deployed AI assistant returned $16,969.00 across 100 records, Growth revenue of $6,629.71 (39.07%), and 29 Growth records from 11 observed customer IDs.
+- The first integration check exposed stale browser selection values after Reset filters. Replaced widget-key deletion with an explicit reset callback that assigns all default filter values. Added a regression test checking widget values, KPI values, cleared conversation state and the next API request's evidence. All 29 tests passed.
+- Removed a fixed sample-count example from the Dify prompt after a response reused it in a filtered context. The published prompt now requires selected counts from KPI or filtered summaries and distinguishes full-source quality checks.
+- AI responses are generated and can still contain interpretation errors; the application exposes supporting evidence and instructs users to verify answers.
+- Live Online-only chat correctly returned Online, $7,453.50, 50 records, and Growth revenue of $3,179.86 (42.66%) from 14 records and 10 observed customer IDs. The prior full-scope conversation cleared on the filter change.
+- Live Reset filters restored both channel selections, $16,969.00 and 100 records, and cleared the filtered conversation. A subsequent Qwen answer confirmed those totals and correctly cited Decline revenue of $3,649.81, 19 records, satisfaction 1.58 and 17 of the 18 low-satisfaction records. It distinguished historical revenue from predicted loss.

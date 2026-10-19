@@ -1,6 +1,8 @@
 # NovaRetail customer intelligence
 
-Python / Streamlit / Plotly / Dify
+Python / Streamlit / Plotly / Dify / Qwen
+
+Live dashboard: https://novaretail-insights.streamlit.app/
 
 Sophia Martinez needs to identify valuable customers, prioritize retention reviews and choose commercial experiments. This dashboard connects these decisions to the supplied workbook, with consistent filters and an AI assistant that receives the same selected data.
 
@@ -31,10 +33,10 @@ On Windows, activate with `.venv\Scripts\activate` instead. The dashboard and co
 | `dify_prompt.txt` | Prompt to paste into Dify |
 | `dify_preview_context.json` | Full-selection evidence for testing in Dify Studio |
 | `final_prompt.txt` | Final specification used to build this application |
-| `BRIGHTSPACE_SUBMISSION.txt` | Three insights and a public-URL placeholder |
+| `BRIGHTSPACE_SUBMISSION.txt` | Three insights and the deployed dashboard URL |
 | `dashboard_layout.svg` | Dashboard layout sketch |
 | `DEPLOYMENT.md` | English deployment and submission instructions |
-| `TEST_REPORT.md` | Verification results and remaining live checks |
+| `TEST_REPORT.md` | Automated and live verification results |
 | `tests/test_dashboard.py` | Analytics, mocked AI and Streamlit interaction tests |
 | `.streamlit/config.toml` | Theme and app settings |
 | `.streamlit/secrets.toml.example` | Credential placeholders only |
@@ -54,13 +56,13 @@ DIFY_API_BASE = "https://api.dify.ai/v1"
 # CHAT_ACCESS_CODE = "your-private-demo-code"
 ```
 
-Select and configure the chat model in Dify. The app needs a Paragraph variable named `dashboard_context` and the supplied `dify_prompt.txt`. Publish changes before testing. Dify workspace access, model quota and a successful live response still need verification.
+Select and configure the chat model in Dify. The app needs a Paragraph variable named `dashboard_context` and the supplied `dify_prompt.txt`. Publish changes before testing. The deployed project uses Qwen3.7-plus through Dify; the live integration was verified on October 19, 2026. Model availability and remaining quota can change.
 
 5. Deploy. Configure public app access in the app's share settings, then test the generated `https://…streamlit.app` URL in a private browser window.
 6. Ask a real AI question, compare its cited numbers with the tables, change filters, and confirm the answer updates. Share the optional chat access code privately with the instructor if enabled. The dashboard itself remains accessible without it.
 7. Paste the verified public URL into `BRIGHTSPACE_SUBMISSION.txt`. Provide the contribution statement directly in the private submission form; keep personal names out of this project. Upload `app.py`, `requirements.txt`, `NR_dataset.xlsx`, `final_prompt.txt` and the note to Brightspace.
 
-The public URL is not included until a real deployment exists. The package is ready to deploy; this is not a claim that the app has already been published.
+The deployed application is available at https://novaretail-insights.streamlit.app/ with public sharing enabled. The source repository remains private; no real API key is included in these files.
 
 ## Layout and decisions
 

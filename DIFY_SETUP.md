@@ -59,7 +59,7 @@ DIFY_API_BASE = "https://api.dify.ai/v1"
 
 For a self-hosted Dify instance, use its HTTPS API base URL instead. For local development, put the same settings in `.streamlit/secrets.toml`. The example file alone does not configure the app. Never commit the real key to GitHub or include it in the submission note.
 
-Publish again whenever you change the Dify prompt, model or variables. The Streamlit dashboard remains the main submitted application and still needs a verified public Streamlit URL.
+Publish again whenever you change the Dify prompt, model or variables. The Streamlit dashboard is the main submitted application: https://novaretail-insights.streamlit.app/
 
 ## 5. Verify the integrated chatbot
 
@@ -69,7 +69,7 @@ Publish again whenever you change the Dify prompt, model or variables. The Strea
 4. Clear the conversation and ask another question. The new conversation should still use the current Growth selection.
 5. Restore all filters. Ask for confirmed churn or profit margin. The assistant should explain that the data cannot establish those figures.
 
-Record the selected Dify model and the successful live checks in `TEST_REPORT.md` after testing. The current package has mocked API tests; it does not claim a live Dify request has already succeeded.
+Record the selected Dify model and the successful live checks in `TEST_REPORT.md` after testing. The deployed Streamlit integration has also returned live Qwen answers. See `TEST_REPORT.md` for the verified scope and figures.
 
 ## Troubleshooting
 

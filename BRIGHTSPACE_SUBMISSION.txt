@@ -1,7 +1,7 @@
 Challenge 2: NovaRetail — Interactive Dashboarding for Decision Making
 
 PUBLIC STREAMLIT DASHBOARD URL
-[Paste the verified public Streamlit URL here after deployment.]
+https://novaretail-insights.streamlit.app/
 
 THREE KEY INSIGHTS
 Scope: All supplied records, January 15-February 20, 2023, with all filters selected.
@@ -27,4 +27,4 @@ requirements.txt
 NR_dataset.xlsx
 final_prompt.txt
 
-Before submitting, replace the URL placeholder, verify a live AI response and provide the contribution statement privately.
+The Streamlit dashboard is deployed with a Dify Qwen chatbot. Provide the accurate contribution statement privately before submitting.

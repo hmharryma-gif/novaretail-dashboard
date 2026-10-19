@@ -1,6 +1,8 @@
 # Deployment and submission
 
-The application, dataset, final prompt and three insights are ready. Add a real public URL only after successful deployment. Follow `DIFY_SETUP.md` to publish a Dify Chatbot, configure its app API key and verify a live answer before treating the AI requirement as complete.
+Deployed dashboard: https://novaretail-insights.streamlit.app/
+
+The app runs on Streamlit Community Cloud with Python 3.12, public sharing enabled, and a Dify Qwen3.7-plus chatbot. The app API key is stored in Streamlit Secrets. See `TEST_REPORT.md` for live checks. The instructions below document how to reproduce the deployment.
 
 ## GitHub
 
@@ -43,7 +45,7 @@ Optionally set `CHAT_ACCESS_CODE` to restrict the paid chat feature while leavin
 
 ## Submission
 
-Use `BRIGHTSPACE_SUBMISSION.txt` for the three insights. Add the verified public URL when available. Supply the contribution declaration directly in the private submission form, without adding contributor names to this public project.
+Use `BRIGHTSPACE_SUBMISSION.txt` for the three insights. The verified deployment URL is already included. Supply the contribution declaration directly in the private submission form, without adding contributor names to this public project.
 
 Submit `app.py`, `requirements.txt`, `NR_dataset.xlsx` and `final_prompt.txt` as required. Tests, documentation and the layout sketch are supporting project files.
 
